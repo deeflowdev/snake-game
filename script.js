@@ -98,7 +98,7 @@ function gameLoop() {
     checkGameOver();
 
     gameLoop();
-  }, 180);
+  }, 200);
 }
 
 function drawFrame() {
