@@ -312,16 +312,12 @@ function displayGameOver() {
 function disableControls() {
   controlButtons.forEach((btn) => {
     btn.disabled = true;
-    btn.style.opacity = "0.5";
-    btn.style.pointerEvents = "none";
   });
 }
 
 function enableControls() {
   controlButtons.forEach((btn) => {
     btn.disabled = false;
-    btn.style.opacity = "1";
-    btn.style.pointerEvents = "auto";
   });
 }
 
