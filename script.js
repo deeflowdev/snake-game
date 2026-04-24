@@ -2,6 +2,7 @@ const gameBoard = document.getElementById("game-board");
 const ctx = gameBoard.getContext("2d");
 const scoreText = document.getElementById("scoreText");
 const resetBtn = document.getElementById("reset-btn");
+const controlButtons = document.querySelectorAll(".controls button");
 
 const unitSize = 25;
 const gameWidth = gameBoard.width;
@@ -58,6 +59,7 @@ function initGame() {
 
   createFood();
   drawFrame();
+  enableControls();
 }
 
 // start only when key pressed
@@ -277,6 +279,7 @@ function checkGameOver() {
   if (hitWall || hitSelf) {
     running = false;
     gameStarted = false;
+    disableControls();
     displayGameOver();
   }
 }
@@ -304,6 +307,22 @@ function displayGameOver() {
   ctx.fillStyle = "#fff";
   ctx.font = "13px 'Press Start 2P', monospace";
   ctx.fillText("Score: " + score, gameWidth / 2, gameHeight / 2 + 60);
+}
+
+function disableControls() {
+  controlButtons.forEach((btn) => {
+    btn.disabled = true;
+    btn.style.opacity = "0.5";
+    btn.style.pointerEvents = "none";
+  });
+}
+
+function enableControls() {
+  controlButtons.forEach((btn) => {
+    btn.disabled = false;
+    btn.style.opacity = "1";
+    btn.style.pointerEvents = "auto";
+  });
 }
 
 resetBtn.addEventListener("click", initGame);

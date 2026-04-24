@@ -199,6 +199,11 @@ button {
   transform: scale(0.92);
 }
 
+.controls button:disabled {
+  opacity: 0.4;
+  transform: none;
+}
+
 @media (max-width: 768px) {
   body {
     align-items: center; 
