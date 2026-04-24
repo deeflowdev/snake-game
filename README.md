@@ -21,7 +21,7 @@ Use arrow keys (or on-screen controls on mobile):
 The snake grows when it eats food. The game ends when it hits the wall or itself.
 
 ## 🚀 Live Demo
-(Add GitHub Pages link here if deployed)
+[Play the Snake Game](https://deeflowdev.github.io/snake-game/)
 
 ## 🛠️ Built With
 - HTML5 Canvas
